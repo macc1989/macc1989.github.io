@@ -163,6 +163,64 @@
             
 <div class="cube-excerpt" id="cube-excerpt-Hello World">
     <header class="cube-excerpt-header">
+        <h1><a href="/2018/10/21/极客大赛2018-IOT/">Hello World</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2018-10-21
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <h1 id="极客大赛2018-IOT"><a href="#极客大赛2018-IOT" class="headerlink" title="极客大赛2018-IOT"></a>极客大赛2018-IOT</h1><p><strong>IOT</strong>物联网（英语：Internet of Things，缩写IoT）是互联网、传统电信网等信息承载体，让所有能行使独立功能的普通物体实现互联互通的网络。</p>
+<ul>
+<li><strong>IOT第一题</strong> ：该题主要考察wireshark的基本使用，分值为150分，本题本身并不难，但由于许多新生并未接触过iot，故一开始并不会知道需要什么软件，因此适当的信息收集是必须的。</li>
+</ul>
+<hr>
+<p>[TOC]</p>
+<h2 id="工具：Wireshark（在吾爱破解工具包可直接打开）"><a href="#工具：Wireshark（在吾爱破解工具包可直接打开）" class="headerlink" title="工具：Wireshark（在吾爱破解工具包可直接打开）"></a>工具：Wireshark（在吾爱破解工具包可直接打开）</h2><blockquote>
+<p>Wireshark（前称Ethereal）是一个免费开源的网上数据包分析软件。 网上数据包分析软件的功能是截取网上数据包，并尽可能显示出最为详细的网上数据包数据    —— [维基百科]</p>
+</blockquote>
+<p>下载地址:<a href="https://www.wireshark.org/" target="_blank" rel="noopener">https://www.wireshark.org/</a></p>
+<p>##题目描述</p>
+<blockquote>
+<p>蒙师傅说这是他抓智能设备的通信的数据包，说不用题目描述了，直接放tip：flag就在数据包里，明显的不能在明显了。所以.。。提交flag的时候，请把flag四个字母改成SYC再提交！<br>题目链接：<a href="https://pan.baidu.com/s/1SJmjEs7WaGaT3S3cgRrxAQ" target="_blank" rel="noopener">https://pan.baidu.com/s/1SJmjEs7WaGaT3S3cgRrxAQ</a> 提取码：ejvo<br>tip：数据包里好像携带着什么文件。在什么类型的包里面呢？怎么导出他们呢？</p>
+</blockquote>
+<p>##解题方案</p>
+<p>最开始做iot完全没思路，在搜索<strong>pcapng</strong>文件后得知应用<strong>Wireshark</strong>打开，故使用<strong>wireshark</strong>打开之。根据题目描述，flag就在数据包中，故首先搜索字符串flag。<br><img src="./wireshark截图1.png" alt="Alt text"><br>遗憾的是无法搜索到flag。</p>
+<p>搜索资料后发现，wireshark可使用<strong>抓包</strong>功能。<br>于是我们尝试使用wireshark抓包<br>首先设置过滤流，只留下<strong>Http流</strong><br><img src="./wireshark截图2.png" alt="Alt text"><br>随后尝试导出抓包得到的数据<br>如何打开抓包工具呢？</p>
+<p><strong>打开文件-导出对像-Http</strong><br><img src="./wireshark截图3.png" alt="Alt text"></p>
+<p>然后得到许多文件，如图:<br><img src="./wireshark截图4.png" alt="Alt text"></p>
+<p>不过我们并不清楚哪个文件藏有flag（至少我一开始不知道—.—），于是选择save all导出全部文件：<br><img src="./wireshark截图5.png" alt="Alt text"><br><strong>重点来了</strong></p>
+<p>这是导出的文件，发现看到有个<strong>压缩文件</strong>很可疑，于是将其解压<br><img src="./wireshark截图6.png" alt="Alt text"></p>
+<p>发现有一个无后缀名的<strong>flag</strong>文件<br>于是使用万能的<strong>notepad++</strong>打开它</p>
+<p><strong>激动人心的时刻到了</strong></p>
+<p>我们得到了flag!<br><img src="./wireshark截图7.png" alt="Alt text"><br>flag为</p>
+<blockquote>
+<p>flag{4f90b47d-86c0-4b0e-8090-cf2eb05f15bc}</p>
+</blockquote>
+<p>根据题目描述，更改flag为SYC</p>
+<p><strong>故真正flag为</strong></p>
+<blockquote>
+<p>SYC{4f90b47d-86c0-4b0e-8090-cf2eb05f15bc}</p>
+</blockquote>
+<p>参考资料:<a href="https://www.cnblogs.com/bmjoker/p/8907858.html?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">https://www.cnblogs.com/bmjoker/p/8907858.html?tdsourcetag=s_pctim_aiomsg</a></p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2018/10/21/极客大赛2018-IOT/">Read More</a>
+    </footer>
+</div>
+
+<div class="cube-excerpt" id="cube-excerpt-Hello World">
+    <header class="cube-excerpt-header">
         <h1><a href="/2018/10/21/hello-world/">Hello World</a></h1>
         <div class="cube-excerpt-header-msg">
             <div class="cube-excerpt-date">
@@ -258,7 +316,7 @@
     
     
     <div class="count">
-        <a class="count articles"><span>1</span>Article</a>
+        <a class="count articles"><span>2</span>Article</a>
         <a class="count tags"><span>0</span>Tags</a>
         <a class="count categories"><span>0</span>Categories</a>
     </div>
@@ -297,10 +355,23 @@
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/2018/10/21/hello-world/" title="Hello World">Hello World</a>
+                    <a href="/2018/10/21/极客大赛2018-IOT/" title="Hello World">Hello World</a>
                 </p>
             </div>
             
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2018/10/21/hello-world/" title="Hello World">Hello World</a>
+                </p>
+            </div>
         </li>
         
         
